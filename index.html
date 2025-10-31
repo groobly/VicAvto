@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Victory Avto - Ремонт АКПП в Новороссийске</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&family=Montserrat:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Teko:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #080808;
+            color: #E0E0E0;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+        .font-brand-heading {
+            font-family: 'Teko', sans-serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .font-brand-title {
+            font-family: 'Advent Pro', sans-serif;
+            font-weight: 200;
+            text-transform: uppercase;
+        }
+        .font-brand-sub {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .font-brand-italic {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+        .font-playfair-normal {
+             font-family: 'Playfair Display', serif;
+        }
+        .gold-text {
+            color: #c5a35c;
+        }
+        .gold-bg {
+            background-color: #c5a35c;
+        }
+        .gold-border {
+            border-color: #c5a35c;
+        }
+        .gold-gradient {
+            background: linear-gradient(145deg, #e7c378, #a28242);
+            color: #111;
+        }
+        
+        /* Animation Classes */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        ::selection {
+            background-color: #c5a35c;
+            color: #000;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c5a35c;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a28242;
+        }
+
+        /* NEW ANIMATIONS */
+        @keyframes zoom-pan {
+            0% { transform: scale(1.05); }
+            100% { transform: scale(1.15); }
+        }
+        .bg-zoom-pan {
+            animation: zoom-pan 25s ease-in-out infinite alternate;
+            will-change: transform;
+        }
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .is-visible .stagger-children > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Stagger Delays */
+        .is-visible .stagger-children > *:nth-child(1) { transition-delay: 0.2s; }
+        .is-visible .stagger-children > *:nth-child(2) { transition-delay: 0.4s; }
+        .is-visible .stagger-children > *:nth-child(3) { transition-delay: 0.6s; }
+        .is-visible .stagger-children > *:nth-child(4) { transition-delay: 0.8s; }
+
+        /* Stagger for WhyUs cards */
+        #why-us .is-visible .grid > div:nth-child(1) { transition-delay: 0.2s; }
+        #why-us .is-visible .grid > div:nth-child(2) { transition-delay: 0.4s; }
+        #why-us .is-visible .grid > div:nth-child(3) { transition-delay: 0.6s; }
+        
+        /* Corner Glow Styles */
+        .corner-glow {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(197, 163, 92, 0.18) 0%, transparent 60%);
+            filter: blur(90px);
+            pointer-events: none;
+            z-index: 0;
+            animation: subtle-pulse 8s ease-in-out infinite;
+        }
+        .corner-glow.top-left { top: -400px; left: -400px; animation-delay: 0s; }
+        .corner-glow.top-right { top: -400px; right: -400px; animation-delay: 2s; }
+        .corner-glow.bottom-left { bottom: -400px; left: -400px; animation-delay: 4s; }
+        .corner-glow.bottom-right { bottom: -400px; right: -400px; animation-delay: 6s; }
+
+        @keyframes subtle-pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.15); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
